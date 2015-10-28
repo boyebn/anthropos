@@ -40,7 +40,24 @@
 				{
 					echo "Could not change to active.<br />";
 				}
-			}
+            } else if (isset($_GET["active"]) && $_GET["active"] == "false")
+            {
+                $deactivate = 0;
+                foreach ($person["memberof"] as $group)
+                {
+                    if (strpos($group, "active"))
+                    {
+                        $deactivate = 1;
+                    }
+                }
+                if ($deactivate == 1 && removeUserFromGroup($uid, "cn=active,ou=sections,ou=org,ou=groups,dc=studentmediene,dc=no"))
+                {
+                    echo $person["cn"][0] . " is now inactive.<br />";
+                } else
+                {
+                    echo "Could not change to inactive.<br />";
+                }
+            }
 
 			if (sizeof($person) > 0)
 			{
@@ -92,17 +109,15 @@
 
 				?>
 				<form>
-                                <input type=button
-                                value="Reset Password"
-                                onClick="self.location='?uid=<?php echo $uid; ?>&reset=true'">
-                                </form>
+                    <input type="button" value="Reset Password" onClick="self.location='?uid=<?php echo $uid; ?>&reset=true'">
+                </form>
 
 				<form>
-                                <input type=button
-                                value="Set Active"
-                                onClick="self.location='?uid=<?php echo $uid; ?>&active=true'"
-				<?php if($active == 1) { echo " disabled"; } ?>/>
-                                </form>
+                    <input type="button" value="Set Active" onClick="self.location='?uid=<?php echo $uid; ?>&active=true'" <?php if($active == 1) { echo " disabled"; } ?>/>
+                </form>
+                <from>
+                    <input type="button" value="Set Inactive" onClick="self.location='?uid=<?php echo $uid; ?>&active=false'" <?php if($active == 0) { echo " disabled"; } ?>/>
+                </form>
 				<?php
 				
 			}

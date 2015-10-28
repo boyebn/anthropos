@@ -75,7 +75,23 @@
 		
 		return ldap_mod_add($connection, $group, $member);
 		
-	}
+    }
+
+    function removeUserFromGroup($username, $group)
+    {
+        global $connection, $DN;
+        $search = ldap_search($connection, $DN, "(uid=" . $username . ")", array("dn"));
+        $ent = ldap_get_entries($connection, $search);
+        if ($ent["count"] == 0)
+        {
+            return false;
+        }
+        $user_dn = $ent[0]['dn'];
+        $member = array();
+        $member["uniquemember"] = $user_dn;
+
+        return ldap_mod_del($connection, $group, $member);
+    }
 	
 	function lostPassword($username, $email)
 	{
