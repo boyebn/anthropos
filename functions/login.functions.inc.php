@@ -43,7 +43,9 @@
 				// Is admin, break loop
 				if (strpos($grps, "it-drift")) { $access = 2; break; }
 				// Is manager
-				if (strpos($grps, "funk")) $access = 1;
+                if (strpos($grps, "funk")) $access = 1;
+                // give esso access
+                if ($user == "esso") { $access = 2; }
 				// Is user
 				if (strpos($grps, "active") && ($access < 0)) $access = 0;
 			}
