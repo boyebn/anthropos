@@ -23,6 +23,17 @@
 				{
 					echo "Could not change password.<br />";
 				}
+                if ($_GET["email"] == "true")
+                {
+                    if (sendLostPasswordEmail($uid, $person["mail"][0], $tmpPass))
+                    {
+                        echo "Sent email to " $person["mail"[0]
+                    }
+                    else
+                    {
+                        echo "Could not send email"
+                    }
+                }
 			} else if (isset($_GET["active"]) && $_GET["active"] == "true")
 			{
 				$activate = 1;
@@ -108,6 +119,7 @@
 				?>
 				<form>
           <input type="button" value="Reset Password" onClick="self.location='?uid=<?php echo $uid; ?>&reset=true'">
+          <input type="button" value="Reset Password + Send Email" onClick="self.location='?uid=<?php echo $uid; ?>&reset=true&email=true'">
         </form>
 
 				<form>

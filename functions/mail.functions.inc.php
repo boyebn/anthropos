@@ -16,7 +16,7 @@
 		
 		Vet du ikke hva dette er, eller hvorfor du får den, vennligst ta kontakt med bruker@studentmediene.no så raskt som mulig.
 		
-		Vennlig hilse,
+		Vennlig hilsen,
 		IT-Drift
 		Studentmediene i Trondheim
 		";
