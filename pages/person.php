@@ -23,7 +23,7 @@
 				{
 					echo "Could not change password.<br />";
 				}
-                if ($_GET["email"] == "true")
+                if (isset($_GET["email"]) && $_GET["email"] == "true")
                 {
                     if (sendLostPasswordEmail($uid, $person["mail"][0], $tmpPass))
                     {
