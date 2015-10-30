@@ -27,11 +27,11 @@
                 {
                     if (sendLostPasswordEmail($uid, $person["mail"][0], $tmpPass))
                     {
-                        echo "Sent email to " $person["mail"[0]
+                        echo "Sent email to . " $person["mail"[0];
                     }
                     else
                     {
-                        echo "Could not send email"
+                        echo "Could not send email";
                     }
                 }
 			} else if (isset($_GET["active"]) && $_GET["active"] == "true")
