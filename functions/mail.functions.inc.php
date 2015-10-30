@@ -14,7 +14,8 @@
 		
 		For å endre passord, logg inn med informasjonen over på www.bruker.smint.no
 		
-		Vet du ikke hva dette er, eller hvorfor du får den, vennligst ta kontakt med bruker@studentmediene.no så raskt som mulig.
+		Vet du ikke hva dette er, eller hvorfor du får den,
+        vennligst ta kontakt med bruker@studentmediene.no så raskt som mulig.
 		
 		Vennlig hilsen,
 		IT-Drift
