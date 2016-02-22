@@ -1,16 +1,16 @@
 <?php
-	// No errors
-	error_reporting(0);
+    // No errors
+    error_reporting(0);
     //ini_set('display_errors',1);
     //ini_set('display_startup_errors',1);
 
     // Starting session
-	session_start();
+    session_start();
 
-	require_once("settings/ldap_connect.inc.php");
-	require_once("functions/functions.inc.php");
-	require_once("settings/menu.inc.php");
-	
+    require_once("../settings/ldap_connect.inc.php");
+    require_once("../functions/functions.inc.php");
+    require_once("../settings/menu.inc.php");
+
 ?>
 
 <!DOCKTYPE HTML>

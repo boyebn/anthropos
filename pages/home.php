@@ -1,4 +1,4 @@
 <?php
-	echo "<img src='spidey.gif'>";
+    echo "<img src='../spidey.gif'>";
 ?>
 

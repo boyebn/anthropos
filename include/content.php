@@ -1,5 +1,5 @@
 <?php
-	
-	require('pages/search.php');
-	
+
+    require('../pages/search.php');
+
 ?>
